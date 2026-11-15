@@ -6426,8 +6426,11 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <!-- emerald: the crDroid donate nudge (crDroidSettings DonateReceiver) asks for a donation
+             once a month with a notification that repeats hourly and has no switch. Disable it in
+             the manifest: the code stays, nothing is scheduled and no broadcast is delivered. -->
         <receiver android:name="com.crdroid.settings.fragments.about.DonateReceiver"
-            android:enabled="true"
+            android:enabled="false"
             android:exported="false">
             <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
